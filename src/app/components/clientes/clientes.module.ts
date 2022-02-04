@@ -20,11 +20,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDatepickerModule,
     ClientesRoutingModule
   ]
 })

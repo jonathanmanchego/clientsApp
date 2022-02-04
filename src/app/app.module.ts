@@ -38,7 +38,12 @@ const MaterialModules = [
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDatepickerModule,
   ],
   providers: [
   ],
