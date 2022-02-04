@@ -16,7 +16,7 @@ jobs:
           node-version: "16.10"
       - run: npm install
       - run: npm install -g @angular/cli > /dev/null
-      - run: ng build
+      - run: ng build --output-path=public
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
