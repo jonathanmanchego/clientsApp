@@ -1,0 +1,52 @@
+<div class="row py-3">
+  <button
+    class="col-auto"
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/clientes/create']"
+  >
+    Nuevo cliente
+  </button>
+</div>
+<div class="row">
+  <div class="list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>Fecha de nacimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clientsObservable | async">
+          <td scope="row">
+            <span [innerText]="client.firstName"></span>
+          </td>
+          <td>
+            <span [innerText]="client.lastName"></span>
+          </td>
+          <td>
+            <span [innerText]="client.age"></span>
+          </td>
+          <td>
+            <span [innerText]="client.birthdate"></span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="right">Promedio edades</td>
+          <td>
+            <span [innerText]="avgAges"></span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="right">Desviacion estandar de edades</td>
+          <td>
+            <span [innerText]="devStandar"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

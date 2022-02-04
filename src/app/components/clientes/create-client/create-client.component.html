@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-12 text-center">
+    <h1>Registrar nuevo cliente</h1>
+  </div>
+  <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
+    <form [formGroup]="formCreateClient" (ngSubmit)="saveNewClient()">
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre:</mat-label>
+          <input matInput formControlName="firstName" autocomplete="name" />
+          <mat-error *ngIf="validateFormControl('firstName')"
+            >Este campo es obligatorio</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Apellidos:</mat-label>
+          <input
+            matInput
+            formControlName="lastName"
+            autocomplete="family-name"
+          />
+          <mat-error *ngIf="validateFormControl('firstName')"
+            >Este campo es obligatorio</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Edad:</mat-label>
+          <input
+            matInput
+            formControlName="age"
+            type="number"
+            autocomplete="off"
+          />
+          <mat-error *ngIf="validateFormControl('firstName')"
+            >Este campo es obligatorio</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de cumpleaños:</mat-label>
+          <input
+            matInput
+            formControlName="birthdate"
+            readonly
+            [matDatepicker]="picker"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="validateFormControl('firstName')"
+            >Este campo es obligatorio</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          class="col-auto"
+        >
+          Registrar cliente
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
