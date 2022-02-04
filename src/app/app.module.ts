@@ -33,10 +33,9 @@ const MaterialModules = [
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
-    ...MaterialModules,
+    /* ...MaterialModules, */
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatNativeDateModule
   ],
