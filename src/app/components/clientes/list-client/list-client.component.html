@@ -17,6 +17,7 @@
           <th>Apellido</th>
           <th>Edad</th>
           <th>Fecha de nacimiento</th>
+          <th>Fecha de defunción</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +33,9 @@
           </td>
           <td>
             <span [innerText]="client.birthdate"></span>
+          </td>
+          <td>
+            <span [innerText]="dateDeath(client)"></span>
           </td>
         </tr>
         <tr>

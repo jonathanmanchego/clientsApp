@@ -2,6 +2,7 @@ import { ClientstStateService } from './../../../services/clients-state.service'
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Client } from 'src/app/models/client';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-list-client',
@@ -22,7 +23,14 @@ export class ListClientComponent implements OnInit {
       }
     )
   }
+  dateDeath(client: Client): string {
+    if (!client.birthdate) {
+      return '';
+    }
+    const years = 60 - Math.ceil(Math.random() * 20);
 
+    return moment(client.birthdate).add('years', years).format('YYYY-MM-DD');
+  }
   setAvgAges(): void {
     let avg = 0;
     this.clientsObservable.subscribe(
